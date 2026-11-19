@@ -147,11 +147,11 @@ export const MomentumSci: React.FC<{ f: number }> = ({ f }) => {
           <Tag x={540} y={1330} o={sm((t - 4.6) / 0.3)} s={pop(t, 4.6)} c={RED} size={56}>MAIS FORÇA PRA FREAR</Tag>
         </g>
         <g opacity={B}>
-          {[["BICICLETA", 760, bikeStop, bike], ["CAMINHÃO", 1220, truckStop, truck]].map(([name, y, stop, u]) => {
+          {[["BICICLETA", 820, bikeStop, bike], ["CAMINHÃO", 1230, truckStop, truck]].map(([name, y, stop, u]) => {
             const x = L0 + ((stop as number) - L0) * ease(u as number), Y = y as number;
             return (
               <g key={name as string}>
-                <text x="70" y={Y - 210} fontFamily="Oswald" fontWeight="700" fontSize="46" fill="#bff3ff">{name as string}</text>
+                <text x="70" y={Y - 200} fontFamily="Oswald" fontWeight="700" fontSize="52" fill="#bff3ff">{name as string}</text>
                 <line x1="60" y1={Y} x2="1020" y2={Y} stroke={BLUE} strokeWidth="8" />
                 <line x1={L0} y1={Y - 170} x2={L0} y2={Y + 30} stroke={YEL} strokeWidth="6" strokeDasharray="16 12" />
                 <line x1={L0} y1={Y + 60} x2={x} y2={Y + 60} stroke={RED} strokeWidth="10" strokeLinecap="round" />
@@ -166,7 +166,7 @@ export const MomentumSci: React.FC<{ f: number }> = ({ f }) => {
               </g>
             );
           })}
-          <Tag x={540} y={500} o={sm((t - 6.3) / 0.3)} s={pop(t, 6.3)} c={YEL} size={54}>FREIAM NA MESMA LINHA</Tag>
+          <Tag x={540} y={420} o={sm((t - 6.3) / 0.3)} s={pop(t, 6.3)} c={YEL} size={54}>FREIAM NA MESMA LINHA</Tag>
         </g>
       </svg>
     </AbsoluteFill>
