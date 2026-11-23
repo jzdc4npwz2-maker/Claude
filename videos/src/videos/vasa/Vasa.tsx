@@ -17,7 +17,7 @@ import { InkPass, noInkFallback } from "./ink";
 import { LensBlur, GrainEffect } from "./lensblur";
 import { GradeEffect, GRADES, GRADE_STRENGTH, gradeFor } from "./grade";
 import { Kit } from "./build";
-import { TOTAL, FLASH_AT, SHOTS, layersAt, dofAt } from "./story";
+import { TOTAL, FLASH_AT, BLINKS, SHOTS, layersAt, dofAt } from "./story";
 
 export const VASA_FRAMES = TOTAL;
 
@@ -111,7 +111,8 @@ export const VasaShort: React.FC = () => {
   const f = useCurrentFrame();
   const kit = useKit();
   if (!kit) return null;
-  const flash = f >= FLASH_AT && f < FLASH_AT + 4 ? [1, 0.75, 0.45, 0.2][f - FLASH_AT] : 0;
+  let flash = f >= FLASH_AT && f < FLASH_AT + 4 ? [1, 0.75, 0.45, 0.2][f - FLASH_AT] : 0;
+  for (const b of BLINKS) if (f >= b - 2 && f < b + 4) flash = Math.max(flash, [0.35, 0.7, 1, 0.7, 0.4, 0.15][f - b + 2]);
   return (
     <AbsoluteFill style={{ background: "#cfe3f2" }}>
       {layersAt(f).map((l, i) => <ShotView key={i ? "over" : "base"} id={l.id} kit={kit} alpha={l.alpha} />)}

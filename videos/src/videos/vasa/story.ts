@@ -61,7 +61,9 @@ export const SHOTS: ShotDef[] = [
   { id: 10, a: 1166, b: 1280, light: "day", crowd: "modern" },
   { id: 11, a: 1280, b: TOTAL, light: "golden", crowd: "tourists" },
 ];
-export const XFADE: Record<number, number> = { 7: 8, 9: 10, 10: 12, 11: 10 };
+// no crossfades: a second WebGL canvas breaks the shared materials in a long render. Time/place jumps blink white.
+export const XFADE: Record<number, number> = {};
+export const BLINKS = [1046, 1166, 1280];
 export const FLASH_AT = 141;
 export const shotAt = (f: number) => SHOTS.find((s) => f >= s.a && f < s.b) ?? SHOTS[SHOTS.length - 1];
 export const layersAt = (f: number): { id: number; alpha: number }[] => {
