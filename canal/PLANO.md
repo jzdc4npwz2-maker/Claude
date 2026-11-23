@@ -36,6 +36,11 @@ Regras para não perder a monetização:
 4. Nada de música ou imagem de terceiros. A trilha é gerada por código, então é 100 % nossa.
 
 ## Vídeo 1: Vasa (pronto)
+Arquivo: `canal/videos/01_vasa.mp4` (47,5 s, 1080x1920). Link público para o Metricool:
+https://raw.githubusercontent.com/jzdc4npwz2-maker/Claude/claude/exciting-feynman-yieuqe/canal/videos/01_vasa.mp4
+Agendar no YouTube como **short**, categoria EDUCATION, madeForKids false, isAiGeneratedContent true, público,
+no melhor horário que o Metricool indicar. Só no canal do e-mail "histórias", nunca na marca "Diário do Fim".
+
 **Título:** O navio mais poderoso da Suécia afundou em 20 minutos 🚢
 
 **Descrição:**
